@@ -55,20 +55,6 @@ interface Genre {
   name: string;
 }
 
-export async function generateMetaData({
-  params,
-}: {
-  params: { id: string };
-  parent: ResolvingMetadata;
-}): Promise<Metadata> {
-  const res = await getMovie(params.id);
-  const movie: IMovieDetail = res;
-
-  return {
-    title: `${movie.title} - Movieku`,
-  };
-}
-
 const DetailMoviePage = async ({ params }: { params: { id: string } }) => {
   const res = await getMovie(params.id);
 
