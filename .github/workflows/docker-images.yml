@@ -11,7 +11,8 @@ jobs:
     steps:
       - name: Prepare Environment
         run: |
-          echo "NEXT_PUBLIC_API_KEY=${{ secrets.NEXT_PUBLIC_API_KEY }}" >> .env.local
+          touch .env.local
+          echo "NEXT_PUBLIC_API_KEY = ${{ secrets.NEXT_PUBLIC_API_KEY }}" >> .env.local
 
       - name: Checkout Repository
         uses: actions/checkout@v2
