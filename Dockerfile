@@ -1,7 +1,5 @@
 FROM node:lts-alpine as build
 
-ENV NEXT_PUBLIC_API_KEY $NEXT_PUBLIC_API_KEY
-
 WORKDIR /app
 
 COPY package*.json ./
